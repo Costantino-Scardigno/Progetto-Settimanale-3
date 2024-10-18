@@ -109,13 +109,30 @@ function deleteOne(str, boolean) {
 console.log(deleteOne("Ciao", true));   
 console.log(deleteOne("Ciao", false ));  
 
+
+
+
+
+
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
+function onlyLetters(inputString) {
+  return inputString.replace(/[0-9]/g, ''); // Rimuove tutte le cifre dalla stringa
+}
+console.log(onlyLetters("Sono123fighissimo!"));
+console.log(onlyLetters("prova1234Test"));    
+console.log(onlyLetters("Niente numeri qui fr!"));       
+console.log(onlyLetters("123456"));           
 
 
+
+/* 
+  ----------------------------- LEGGI QUI PROF :)---------------------------------
+  HO DOVUTO FARE DELLE RICERCHE PER SVOLGERE QUESTO ESERCIZIO.NON AVEVO LA MINIMA IDEA SI POTESSE FARE IN  QUESTO MODO.
+  HO COMUNQUE VOLUTO LASCIARE LE RIGHE DI CODICE PER L'ESERCIZIO. VALUTERA' LEI SE TENER CONTO DI QUESTO ESERCIZIO OPPURE NO. CIAOOOOO
 
 
 
@@ -478,6 +495,25 @@ console.log(searchByTitle("Lord"))
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
 
+function removeIndex(index) {
+  const newMovies = [...movies]; 
+  newMovies.splice(index, 1); 
+  return newMovies; 
+}
+const newArMovies=removeIndex()
+ console.log(removeIndex(2));
+
+
+
+
+
+
+
+
+
+
+
+
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
 /* ESERCIZIO 20
@@ -536,31 +572,43 @@ addBgToLinks();
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
 
-function addEL () {
-  const ul=document.createElement(ul);
+function addItemToList(newText,newli) {
   
-  
+  const ul = document.getElementById("myList");
+  const list = document.createElement("li");
+  list.textContent = newText;
+  list.id=newli
+  ul.appendChild(list);
 }
-
-
-
-
-
-
-
-
-
-
-
-
+addItemToList("Mi chiamo Costantino", "newli" );
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
+
+
+
+
+
+
+
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+
+function addClass() {
+  
+  const tr = document.querySelectorAll('tr');
+  for (let i = 0; i < tr.length; i++) {
+      tr[i].classList.add('test');
+  }
+}
+
+addClass()
+
+
 
 // [EXTRA] JS Avanzato
 
